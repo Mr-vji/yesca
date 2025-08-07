@@ -30,7 +30,7 @@ export default function HomeMain() {
                if (gradient && overlay) {
                   gsap.to(overlay, {
                      backgroundImage: gradient,
-                     duration: 0.6,
+                     duration: 0.3,
                      ease: "power2.out",
                   });
                }
