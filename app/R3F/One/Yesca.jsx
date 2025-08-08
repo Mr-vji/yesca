@@ -53,7 +53,7 @@ export default function Yesca() {
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={20} />
+                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
                   </mesh>
                   {/* Second glowing plane mesh */}
                   <mesh
@@ -61,7 +61,7 @@ export default function Yesca() {
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={20} />
+                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
                   </mesh>
 
                   {/* Invisible plane acting as a floor, receiving shadows */}
