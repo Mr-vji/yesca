@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMobile } from "../useMobile";
-import { ContactShadows, Environment, useScroll } from "@react-three/drei";
+import { ContactShadows, Environment, useHelper, useScroll } from "@react-three/drei";
 import { Dot } from "./Dot";
 import { YLogo } from "./YLogo";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { VFXParticles } from "./VFXPArticles";
 import { useFrame } from "@react-three/fiber";
+import { DirectionalLightHelper } from "three";
 
 export default function Yesca() {
    const initialCameraPos = useRef();
@@ -23,22 +24,41 @@ export default function Yesca() {
    //    }
    // });
 
+   const lightRef = useRef();
+   // useHelper(lightRef, DirectionalLightHelper, 0.2, "red");
+
+   const xx = -2.5;
+
+   useEffect(() => {
+      if (lightRef.current) {
+         lightRef.current.target.position.set(xx, 0, 0); // Look at the origin
+         lightRef.current.target.updateMatrixWorld();
+      }
+   }, [xx]);
+
    return (
       <>
          <>
             <group>
-               <Environment preset="city" />
+               {/* <Environment preset="city" /> */}
                {/* <OrbitControls enableZoom={false} /> */}
 
                <directionalLight
-                  position={[0, 8, -1]}
+                  position={[-2, 8, -1.4]}
                   castShadow
                   intensity={3}
                   shadow-mapSize-width={128}
                   shadow-mapSize-height={128}
                />
-               <directionalLight position={[0, 8, -1]} />
-               <directionalLight position={[0, 1, 1]} color={"blue"} intensity={2} />
+               <directionalLight
+                  position={[0, 0, -8]}
+                  ref={lightRef}
+                  intensity={1}
+                  color={"#6162b8"}
+               />
+
+               {/* <directionalLight position={[0, 8, -1]} /> */}
+               <directionalLight position={[0, 1, 1]} color={"#21227e"} intensity={15} />
 
                <group position={[isMobile ? 2.2 : 0, 0, 0]}>
                   <Dot

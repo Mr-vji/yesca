@@ -25,18 +25,9 @@ export default function HomeMain() {
                   "linear-gradient(180deg,rgba(45, 53, 142, 1) 0%, rgba(117, 167, 218, 1) 85%, rgba(117, 167, 218, 1) 100%)",
             }}
          >
-            <div className="absolute inset-0 flex items-center justify-end px-4 md:px-12 z-10">
-               {/* <div className="text-right">
-                  <h1
-                     className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black italic leading-tight"
-                     style={{ color: "#afd3f8" }}
-                  >
-                     WE MAKE TECH <br /> ACCESSIBLE
-                  </h1>
-               </div> */}
-               <HomeFirstSection />
-            </div>
             <HomePage />
+            <div className="absolute inset-0 flex items-center justify-end px-4 md:px-12 z-0"></div>
+            <HomeFirstSection />
          </section>
 
          <section

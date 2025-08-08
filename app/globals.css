@@ -16,6 +16,8 @@
    :root {
       --background: #0a0a0a;
       --foreground: #ededed;
+      scrollbar-color: #2d358e #00000000;
+      scrollbar-width: none;
    }
 }
 
@@ -24,4 +26,7 @@ body {
    background-color: transparent;
    color: var(--foreground);
    font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
 }

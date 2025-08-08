@@ -12,8 +12,9 @@ export const Header = () => {
 
    useEffect(() => {
       gsap.to(topLineRef.current, {
-         y: isMenuOpen ? 8 : 0,
+         y: isMenuOpen ? 6 : 0,
          rotation: isMenuOpen ? 45 : 0,
+         transformOrigin: "center",
          duration: 0.3,
          ease: "power2.inOut",
       });
@@ -23,8 +24,9 @@ export const Header = () => {
          ease: "power2.inOut",
       });
       gsap.to(bottomLineRef.current, {
-         y: isMenuOpen ? -8 : 0,
+         y: isMenuOpen ? -6 : 0,
          rotation: isMenuOpen ? -45 : 0,
+         transformOrigin: "center",
          duration: 0.3,
          ease: "power2.inOut",
       });
@@ -36,11 +38,13 @@ export const Header = () => {
    }, [isMenuOpen]);
 
    return (
-      <header className="w-full px-6 py-4 flex justify-between items-center bg-white shadow-md fixed top-0 left-0 z-50">
+      <header className="w-full px-6 py-4 flex justify-between items-center bg-white/100 backdrop-blur-md shadow-lg fixed top-0 left-0 z-50">
+         {/* Logo / Left */}
          <div className="flex items-center">
             <RevealAnimation />
          </div>
 
+         {/* Hamburger Menu Button */}
          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-gray-700 relative w-6 h-6"
@@ -52,31 +56,38 @@ export const Header = () => {
                viewBox="0 0 24 24"
                xmlns="http://www.w3.org/2000/svg"
             >
-               <path
+               <line
                   ref={topLineRef}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  x1="4"
+                  y1="6"
+                  x2="20"
+                  y2="6"
                   strokeWidth="2"
-                  d="M4 6h16"
-               ></path>
-               <path
+                  strokeLinecap="round"
+               />
+               <line
                   ref={middleLineRef}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  x1="4"
+                  y1="12"
+                  x2="20"
+                  y2="12"
                   strokeWidth="2"
-                  d="M4 12h16"
-               ></path>
-               <path
+                  strokeLinecap="round"
+               />
+               <line
                   ref={bottomLineRef}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  x1="4"
+                  y1="18"
+                  x2="20"
+                  y2="18"
                   strokeWidth="2"
-                  d="M4 18h16"
-               ></path>
+                  strokeLinecap="round"
+               />
             </svg>
          </button>
 
-         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium text-sm">
+         {/* Desktop Menu */}
+         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
             <a href="Pages/Home" className="hover:text-blue-500 transition">
                Home
             </a>
@@ -84,10 +95,10 @@ export const Header = () => {
                Products
             </a>
             <a href="#work" className="hover:text-blue-500 transition">
-               It services
+               IT Services
             </a>
             <a href="/About" className="hover:text-blue-500 transition">
-               Dev services
+               Dev Services
             </a>
             <a href="#contact" className="hover:text-blue-500 transition">
                About
@@ -97,12 +108,13 @@ export const Header = () => {
             </a>
          </nav>
 
+         {/* Mobile Menu */}
          <div
             ref={menuRef}
-            className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md overflow-hidden"
+            className="md:hidden absolute top-19 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg overflow-hidden"
             style={{ height: 0 }}
          >
-            <nav className="flex flex-col space-y-4 p-6 text-gray-700 font-medium text-sm">
+            <nav className="flex flex-col space-y-4 p-6 text-white font-medium text-sm">
                <a href="Pages/Home" className="hover:text-blue-500 transition">
                   Home
                </a>
@@ -110,10 +122,10 @@ export const Header = () => {
                   Products
                </a>
                <a href="#work" className="hover:text-blue-500 transition">
-                  It services
+                  IT Services
                </a>
                <a href="/About" className="hover:text-blue-500 transition">
-                  Dev services
+                  Dev Services
                </a>
                <a href="#contact" className="hover:text-blue-500 transition">
                   About

@@ -11,7 +11,7 @@ export const Dot = (props) => {
    const count = 10;
    const gap = 0.8;
 
-   const { scene } = useGLTF("/models/DOTBloom.glb");
+   const { scene } = useGLTF("/models/DOT.Yescaglb.glb");
 
    useEffect(() => {
       if (groupRef.current) {
