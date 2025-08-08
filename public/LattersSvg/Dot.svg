@@ -1,3 +1,15 @@
-<svg width="229" height="161" viewBox="0 0 229 161" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.61499 0.0141602H168.759L229 160.05H60.8558L0.61499 0.0141602Z" fill="#2E3192"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801.96 499.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2e3192;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="monogram">
+      <path class="cls-1" d="M0,.75l523.85-.75,278.12,498.27-523.85.75L0,.75Z"/>
+    </g>
+  </g>
 </svg>
