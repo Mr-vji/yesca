@@ -69,19 +69,23 @@ export default function Yesca() {
                   <YLogo position={[-2, -0.99, 0]} scale={isMobile ? 0.035 : 0.045} />
 
                   <mesh
+                     visible={true}
                      position={[isMobile ? -1.9 : -1.88, isMobile ? 0.045 : 0.34, 0]}
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
+                     <meshStandardMaterial color={"white"} emissive={"blue"} />
+                     {/* <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} /> */}
                   </mesh>
                   {/* Second glowing plane mesh */}
                   <mesh
+                     visible={true}
                      position={[isMobile ? -2.61 : -2.78, isMobile ? 0.045 : 0.34, 0]}
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
+                     <meshStandardMaterial color={"white"} emissive={"blue"} />
+                     {/* <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} /> */}
                   </mesh>
 
                   {/* Invisible plane acting as a floor, receiving shadows */}

@@ -88,7 +88,7 @@ export const Header = () => {
 
          {/* Desktop Menu */}
          <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
-            <a href="Pages/Home" className="hover:text-blue-500 transition">
+            <a href="#Home" className="hover:text-blue-500 transition">
                Home
             </a>
             <a href="#services" className="hover:text-blue-500 transition">
