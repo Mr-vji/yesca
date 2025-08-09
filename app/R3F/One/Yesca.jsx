@@ -88,6 +88,16 @@ export default function Yesca() {
                      <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
                   </mesh>
 
+                  <mesh
+                     visible={true}
+                     position={(0, 0, 0)}
+                     rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
+                  >
+                     <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
+                     <meshStandardMaterial color={"white"} emissive={"blue"} />
+                     {/* <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} /> */}
+                  </mesh>
+
                   {/* Invisible plane acting as a floor, receiving shadows */}
                   <mesh
                      visible={false}
