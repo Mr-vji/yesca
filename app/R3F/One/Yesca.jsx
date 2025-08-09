@@ -74,8 +74,8 @@ export default function Yesca() {
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshStandardMaterial color={"white"} emissive={"blue"} />
-                     {/* <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} /> */}
+                     {/* <meshStandardMaterial color={"white"} emissive={"blue"} /> */}
+                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
                   </mesh>
                   {/* Second glowing plane mesh */}
                   <mesh
@@ -84,8 +84,8 @@ export default function Yesca() {
                      rotation={[-Math.PI / 2, 0, 0]} // Rotated to lie flat on the XZ plane
                   >
                      <planeGeometry args={[isMobile ? 0.35 : 0.45, isMobile ? 0.15 : 0.2]} />
-                     <meshStandardMaterial color={"white"} emissive={"blue"} />
-                     {/* <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} /> */}
+                     {/* <meshStandardMaterial color={"white"} emissive={"blue"} /> */}
+                     <meshPhongMaterial color={"white"} emissive={"blue"} emissiveIntensity={0} />
                   </mesh>
 
                   {/* Invisible plane acting as a floor, receiving shadows */}
@@ -109,9 +109,18 @@ export default function Yesca() {
                </group>
 
                {/* Post-processing effects for visual enhancements */}
-               <EffectComposer>
-                  {/* Bloom effect for glowing elements */}
+               {/* <EffectComposer>
                   <Bloom mipmapBlur intensity={1.2} luminanceThreshold={1} />
+               </EffectComposer> */}
+
+               <EffectComposer>
+                  <Bloom
+                     mipmapBlur={true} // smooth blur
+                     intensity={0.6} // moderate bloom strength
+                     luminanceThreshold={0.4} // bloom starts at mid brightness, not just pure white
+                     luminanceSmoothing={0.9} // smooth transition for bloom threshold
+                     radius={0.5} // blur radius for soft edges
+                  />
                </EffectComposer>
 
                {/* Group for VFX Particles, whose Y position is now controlled manually by scroll */}
