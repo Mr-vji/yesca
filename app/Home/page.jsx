@@ -50,7 +50,7 @@ export default function HomeMain() {
 
          <section id="section3" className="w-100vw h-100vh relative">
             <div className="absolute inset-0 z-1">{/* <SecondSection /> */}</div>
-            <div className="relative -z-1 w-full h-full flex items-center justify-center px-4 md:px-12">
+            <div className="relative z-1 w-full h-full flex items-center justify-center px-4 md:px-12">
                <HomeSecondSection />
             </div>
          </section>
@@ -62,7 +62,6 @@ export default function HomeMain() {
             style={{
                background:
                   " linear-gradient(180deg,rgba(252, 253, 255, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(255, 255, 255, 1) 100%)",
-               zIndex: -2,
             }}
          >
             <div className="absolute inset-0 flex items-center justify-center px-4 md:px-12 z-10">

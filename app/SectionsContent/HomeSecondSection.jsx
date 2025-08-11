@@ -39,9 +39,12 @@ export default function HomeSecondSection() {
 
                {/* Buttons */}
                <div className="w-full max-w-md p-1 bg-[#2942fa] rounded-xl flex items-center justify-between">
-                  <p className="text-white text-sm font-mono px-4 py-2">
-                     subscribe to get notified.
-                  </p>
+                  <input
+                     type="text"
+                     placeholder="subscribe to get notified."
+                     className="text-white text-sm font-mono px-4 py-2 bg-transparent focus:outline-none"
+                  />
+
                   <button className="bg-[#2ecc40] hover:bg-[#28b737] text-white font-mono text-sm px-6 py-2 rounded-md transition">
                      KNOW MORE
                   </button>

@@ -26,10 +26,12 @@ export default function HomeThirdSection() {
                <p>🔒 Not saying more just yet — but it’s exactly what’s been missing.</p>
 
                {/* Buttons */}
-               <div className="w-full max-w-md ml-auto p-1 bg-[#29147a] rounded-xl flex items-center justify-end">
-                  <p className="text-[#ded9f4] text-sm font-mono px-8 py-2">
-                     subscribe to get notified.
-                  </p>
+               <div className="w-full max-w-md mx-auto p-1 bg-[#29147a] rounded-xl flex items-center">
+                  <input
+                     type="text"
+                     placeholder="subscribe to get notified."
+                     className="text-white text-sm font-mono px-4 py-2 bg-transparent focus:outline-none flex-grow"
+                  />
                   <button className="bg-[#fd8c0f] hover:bg-[#e57900] text-white font-mono text-sm px-6 py-2 rounded-md transition">
                      KNOW MORE
                   </button>
