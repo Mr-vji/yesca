@@ -116,24 +116,24 @@ export const Header = () => {
             style={{ height: 0 }}
          >
             <nav className="flex flex-col space-y-4 p-6 text-white font-medium text-sm">
-               <a href="Pages/Home" className="hover:text-blue-500 transition">
+               <Link href="/" className="hover:text-blue-500 transition">
                   Home
-               </a>
-               <a href="#services" className="hover:text-blue-500 transition">
+               </Link>
+               <Link href="/Products" className="hover:text-blue-500 transition">
                   Products
-               </a>
-               <a href="#work" className="hover:text-blue-500 transition">
+               </Link>
+               <Link href="/ItServices" className="hover:text-blue-500 transition">
                   IT Services
-               </a>
-               <a href="/About" className="hover:text-blue-500 transition">
+               </Link>
+               <Link href="/Devservices" className="hover:text-blue-500 transition">
                   Dev Services
-               </a>
-               <a href="#contact" className="hover:text-blue-500 transition">
+               </Link>
+               <Link href="/About" className="hover:text-blue-500 transition">
                   About
-               </a>
-               <a href="#contact" className="hover:text-blue-500 transition">
+               </Link>
+               <Link href="/Contact" className="hover:text-blue-500 transition">
                   Contact
-               </a>
+               </Link>
             </nav>
          </div>
       </header>
