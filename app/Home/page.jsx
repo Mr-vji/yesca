@@ -9,6 +9,7 @@ import HomeSecondSection from "@/app/SectionsContent/HomeSecondSection";
 import HomeThirdSection from "@/app/SectionsContent/HomeThirdSection";
 import { HomeFourth } from "@/app/SectionsContent/HomeFourth";
 import { Contact } from "@/app/SectionsContent/Contact";
+import { Weare } from "../SectionsContent/Weare";
 
 export default function HomeMain() {
    const mainRef = useRef(null);
@@ -34,14 +35,20 @@ export default function HomeMain() {
 
          <section
             id="section2"
-            className="w-100vw h-100vh relative"
+            className="w-screen h-screen relative"
             style={{
                background:
-                  // "linear-gradient(180deg,rgba(117, 167, 218, 1) 0%, rgba(169, 211, 252, 1) 70%, rgba(255, 255, 255, 1) 100%);",
-                  "linear-gradient(180deg,rgba(118, 168, 229, 1) 0%, rgba(184, 220, 255, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+                  "linear-gradient(180deg, rgba(118, 168, 229, 1) 0%, rgba(184, 220, 255, 1) 50%, rgba(255, 255, 255, 1) 100%)",
                zIndex: -2,
             }}
          >
+            <div className="absolute inset-0 z-0">{/* <SecondSection /> canvas here */}</div>
+            <div className="relative z-10 w-full h-full flex items-center justify-center ">
+               <Weare />
+            </div>
+         </section>
+
+         <section id="section3" className="w-100vw h-100vh relative">
             <div className="absolute inset-0 z-1">{/* <SecondSection /> */}</div>
             <div className="relative -z-1 w-full h-full flex items-center justify-center px-4 md:px-12">
                <HomeSecondSection />
@@ -50,7 +57,7 @@ export default function HomeMain() {
 
          {/* Section 3 */}
          <section
-            id="section3"
+            id="section4"
             className="w-full h-screen text-white relative flex items-center justify-center"
             style={{
                background:
@@ -58,7 +65,7 @@ export default function HomeMain() {
                zIndex: -2,
             }}
          >
-            <div className="absolute inset-0 flex items-center justify-end px-4 md:px-12 z-10">
+            <div className="absolute inset-0 flex items-center justify-center px-4 md:px-12 z-10">
                <HomeThirdSection />
             </div>
             {/* <HomePage /> */}
@@ -67,8 +74,8 @@ export default function HomeMain() {
 
          {/* Section 4 */}
          <section
-            id="section4"
-            className="w-full h-screen text-white relative flex items-center justify-center"
+            id="section5"
+            className="w-full h-screen text-white relative flex items-center justify-center overflow-hidden"
             style={{
                background:
                   " linear-gradient(180deg,rgba(252, 253, 255, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(255, 255, 255, 1) 100%)",
@@ -79,18 +86,6 @@ export default function HomeMain() {
                <HomeFourth />
             </div>
          </section>
-
-         {/* Section 5 */}
-         {/* <section
-            id="section5"
-            className="w-full min-h-screen relative flex items-center justify-center bg-transparent"
-         >
-            <div className="absolute inset-0 -z-10">Canvas content</div>
-
-            <div className="relative z-10 w-full flex flex-col items-center">
-               <Contact />
-            </div>
-         </section> */}
       </main>
    );
 }

@@ -15,8 +15,8 @@ export default function RevealAnimation() {
    const [dotImage, setDotImage] = useState("/LattersSvg/Dot.svg");
 
    useEffect(() => {
-      gsap.set(Y.current, { x: 90 });
-      gsap.set(Dot.current, { x: -88 });
+      gsap.set(Y.current, { x: 0 });
+      gsap.set(Dot.current, { x: -178 });
       gsap.set([E.current, S.current, C.current, A.current], {
          scale: 0,
          opacity: 0,
@@ -24,10 +24,10 @@ export default function RevealAnimation() {
 
       tl.current = gsap.timeline({ paused: true });
 
+      tl.current;
+
       tl.current
-         .to(Y.current, { x: 0, duration: 0.9, ease: "power1.inOut" })
          .to(Dot.current, { x: 0, duration: 0.9, ease: "power1.inOut" }, "<")
-         // 🔹 Call image swap in the middle of the timeline
          .call(
             () => {
                setDotImage((prev) =>
@@ -36,16 +36,18 @@ export default function RevealAnimation() {
             },
             null,
             ">-0.45"
-         ) // This is roughly the middle timing
-         .to(
-            [S.current, C.current],
-            { scale: 1, opacity: 1, duration: 0.3, ease: "power1.inOut" },
-            "-=0.6"
          )
+         // 🔹 Reveal E, S, C, A one-by-one with stagger
          .to(
-            [E.current, A.current],
-            { scale: 1, opacity: 1, duration: 0.3, ease: "power1.inOut" },
-            "<+=0.1"
+            [E.current, S.current, C.current, A.current],
+            {
+               scale: 1,
+               opacity: 1,
+               duration: 0.1,
+               ease: "power1.inOut",
+               stagger: 0.15, // delay between each letter
+            },
+            "-=0.7" // starts slightly before dot finishes
          );
 
       tl.current.play();
