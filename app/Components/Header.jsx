@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import RevealAnimation from "../R3F/RevealAnimation";
+import Link from "next/link";
 
 export const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,24 +89,24 @@ export const Header = () => {
 
          {/* Desktop Menu */}
          <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
-            <a href="#Home" className="hover:text-blue-500 transition">
+            <Link href="/" className="hover:text-blue-500 transition">
                Home
-            </a>
-            <a href="#services" className="hover:text-blue-500 transition">
+            </Link>
+            <Link href="/Products" className="hover:text-blue-500 transition">
                Products
-            </a>
-            <a href="#work" className="hover:text-blue-500 transition">
+            </Link>
+            <Link href="/ItServices" className="hover:text-blue-500 transition">
                IT Services
-            </a>
-            <a href="/About" className="hover:text-blue-500 transition">
+            </Link>
+            <Link href="/Devservices" className="hover:text-blue-500 transition">
                Dev Services
-            </a>
-            <a href="#contact" className="hover:text-blue-500 transition">
+            </Link>
+            <Link href="/About" className="hover:text-blue-500 transition">
                About
-            </a>
-            <a href="#contact" className="hover:text-blue-500 transition">
+            </Link>
+            <Link href="/Contact" className="hover:text-blue-500 transition">
                Contact
-            </a>
+            </Link>
          </nav>
 
          {/* Mobile Menu */}

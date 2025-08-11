@@ -7,6 +7,8 @@ import SecondSection from "@/app/Components/SecondSection/page";
 import HomeFirstSection from "@/app/SectionsContent/HomeFirstSection";
 import HomeSecondSection from "@/app/SectionsContent/HomeSecondSection";
 import HomeThirdSection from "@/app/SectionsContent/HomeThirdSection";
+import { HomeFourth } from "@/app/SectionsContent/HomeFourth";
+import { Contact } from "@/app/SectionsContent/Contact";
 
 export default function HomeMain() {
    const mainRef = useRef(null);
@@ -62,6 +64,33 @@ export default function HomeMain() {
             {/* <HomePage /> */}
             {/* <SecondSection /> */}
          </section>
+
+         {/* Section 4 */}
+         <section
+            id="section4"
+            className="w-full h-screen text-white relative flex items-center justify-center"
+            style={{
+               background:
+                  " linear-gradient(180deg,rgba(252, 253, 255, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(255, 255, 255, 1) 100%)",
+               zIndex: -2,
+            }}
+         >
+            <div className="absolute inset-0 flex items-center justify-end px-4 md:px-12 z-10">
+               <HomeFourth />
+            </div>
+         </section>
+
+         {/* Section 5 */}
+         {/* <section
+            id="section5"
+            className="w-full min-h-screen relative flex items-center justify-center bg-transparent"
+         >
+            <div className="absolute inset-0 -z-10">Canvas content</div>
+
+            <div className="relative z-10 w-full flex flex-col items-center">
+               <Contact />
+            </div>
+         </section> */}
       </main>
    );
 }
