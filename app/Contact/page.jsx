@@ -43,8 +43,14 @@ export default function Contact() {
                   </label>
                   <select className="w-full px-5 py-4 bg-[#111827] rounded-lg border border-gray-700 focus:border-sky-400 focus:outline-none text-base">
                      <option value="">Select</option>
-                     <option value="Web App">Web App</option>
-                     <option value="Mobile App">Mobile App</option>
+                     <option value="Social media marketing">Social media marketing.</option>
+                     <option value="Website Development">Website Development.</option>
+                     <option value="App Development">App Development.</option>
+                     <option value="Brand Identity">Brand Identity.</option>
+                     <option value="SEO Optimization">SEO Optimization.</option>
+                     <option value="Software Solutions">Software Solutions.</option>
+                     <option value="Hardware Solutions">Hardware Solutions.</option>
+                     <option value="Technical Solutions">Technical Solutions.</option>
                   </select>
                </div>
 
