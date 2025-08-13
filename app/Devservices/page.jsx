@@ -1,8 +1,45 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 export default function Devservices() {
+   const textRef = useRef(null);
+
+   useEffect(() => {
+      // Get all letters in h1 and all letters in p
+      const letters = textRef.current.querySelectorAll("span");
+      gsap.fromTo(
+         letters,
+         { opacity: 0, y: 20 },
+         {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.04, // 0.04s between letters
+            ease: "power3.out",
+         }
+      );
+   }, []);
+
+   const heading = "Dev services Page";
+   const paragraph = "This is the Dev services page of our Next.js application.";
+
    return (
       <main className="flex h-screen flex-col items-center justify-center bg-amber-500">
-         <h1 className="text-9xl font-bold text-amber-800 ">Dev services Page</h1>
-         <p className="mt-4 text-lg">This is the Dev services page of our Next.js application.</p>
+         <h1 ref={textRef} className="text-9xl font-bold text-amber-800 ">
+            {heading.split("").map((char, index) => (
+               <span key={`h-${index}`} style={{ display: "inline-block", whiteSpace: "pre" }}>
+                  {char}
+               </span>
+            ))}
+         </h1>
+         <p className="mt-4 text-lg">
+            {paragraph.split("").map((char, index) => (
+               <span key={`p-${index}`} style={{ display: "inline-block", whiteSpace: "pre" }}>
+                  {char}
+               </span>
+            ))}
+         </p>
       </main>
    );
 }

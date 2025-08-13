@@ -31,7 +31,10 @@ export default function RevealAnimation() {
          .call(
             () => {
                setDotImage((prev) =>
-                  prev === "/LattersSvg/Dot.svg" ? "/LattersSvg/DotOpen.svg" : "/LattersSvg/Dot.svg"
+                  // prev === "/LattersSvg/Dot.svg" ? "/LattersSvg/DotOpen.svg" : "/LattersSvg/Dot.svg"
+                  prev === "/LattersSvg/DotOpen.svg"
+                     ? "/LattersSvg/Dot.svg"
+                     : "/LattersSvg/DotOpen.svg"
                );
             },
             null,

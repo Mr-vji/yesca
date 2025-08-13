@@ -30,3 +30,63 @@ body {
    padding: 0;
    scroll-behavior: smooth;
 }
+
+.contact-page-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+
+   /* Gradient background */
+   background: linear-gradient(135deg, #75a7da, #2d358e, #808080);
+   background-size: 200% 200%;
+
+   /* Glass effect */
+   backdrop-filter: blur(20px);
+   -webkit-backdrop-filter: blur(20px);
+   background-color: rgba(255, 255, 255, 0.1);
+
+   /* Hover animation */
+   transition: transform 0.4s ease, background-position 4s ease;
+   z-index: 0;
+}
+
+.contact-page-bg:hover {
+   transform: scale(1.03) translateY(-5px);
+   background-position: 100% 50%;
+}
+
+/* globals.css */
+
+/* Animate old content out and new content in */
+::view-transition-old(root) {
+   animation: slide-out 1s ease forwards;
+}
+::view-transition-new(root) {
+   animation: slide-in 1s ease forwards;
+}
+
+@keyframes slide-out {
+   from {
+      transform: translateY(0);
+      opacity: 1;
+      scale: 1;
+   }
+   to {
+      transform: translateY(-100%);
+      opacity: 1;
+      scale: 0.8;
+   }
+}
+
+@keyframes slide-in {
+   from {
+      transform: translateY(100%);
+      opacity: 1;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}

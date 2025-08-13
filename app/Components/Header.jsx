@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import RevealAnimation from "../R3F/RevealAnimation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,6 +38,35 @@ export const Header = () => {
          ease: "power2.inOut",
       });
    }, [isMenuOpen]);
+
+   // Page transition effect
+
+   const router = useRouter();
+   const coverRef = useRef(null);
+
+   useEffect(() => {
+      if (!document.startViewTransition) return; // Fallback for browsers without support
+
+      // Override Next.js routing to use view transitions
+      const originalPush = router.push;
+      router.push = (href, options) => {
+         document.startViewTransition(() => {
+            originalPush(href, options);
+         });
+      };
+   }, [router]);
+
+   const handleNavClick = (e, href) => {
+      e.preventDefault(); // stop immediate navigation
+      gsap.to(coverRef.current, {
+         yPercent: 0, // slide cover down
+         duration: 0,
+         ease: "power2.inOut",
+         onComplete: () => {
+            router.push(href);
+         },
+      });
+   };
 
    return (
       <header className="w-full px-6 py-4 flex justify-between items-center bg-white/100 backdrop-blur-md shadow-lg fixed top-0 left-0 z-50">
@@ -88,7 +118,7 @@ export const Header = () => {
          </button>
 
          {/* Desktop Menu */}
-         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
+         {/* <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
             <Link href="/" className="hover:text-blue-500 transition">
                Home
             </Link>
@@ -107,6 +137,29 @@ export const Header = () => {
             <Link href="/Contact" className="hover:text-blue-500 transition">
                Contact
             </Link>
+         </nav> */}
+
+         {/* Page transition effect menus  */}
+         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
+            <a href="/" onClick={(e) => handleNavClick(e, "/")}>
+               Home
+            </a>
+            <a href="/Products" onClick={(e) => handleNavClick(e, "/Products")}>
+               Products
+            </a>
+            <a href="/ItServices" onClick={(e) => handleNavClick(e, "/ItServices")}>
+               IT Services
+            </a>
+            <a href="/Devservices" onClick={(e) => handleNavClick(e, "/Devservices")}>
+               Dev Services
+            </a>
+            <a href="/About" onClick={(e) => handleNavClick(e, "/About")}>
+               About
+            </a>
+
+            <a href="/Contact" onClick={(e) => handleNavClick(e, "/Contact")}>
+               Contact
+            </a>
          </nav>
 
          {/* Mobile Menu */}
