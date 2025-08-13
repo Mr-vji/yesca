@@ -35,8 +35,8 @@ export default function ItServices() {
    const paragraph = "This is the about page of our Next.js application.";
 
    return (
-      <main className="flex h-screen flex-col items-center justify-center bg-amber-500">
-         <h1 ref={headingRef} className="text-9xl font-bold text-amber-800 ">
+      <main className="flex h-screen flex-col items-center justify-center bg-pink-500">
+         <h1 ref={headingRef} className="text-9xl font-bold text-white-800 ">
             {heading.split("").map((char, index) => (
                <span key={`h-${index}`} style={{ display: "inline-block", whiteSpace: "pre" }}>
                   {char}
