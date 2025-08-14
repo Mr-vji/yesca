@@ -60,7 +60,7 @@ body {
 /* globals.css */
 
 /* Animate old content out and new content in */
-::view-transition-old(root) {
+/* ::view-transition-old(root) {
    animation: slide-out 1s ease forwards;
 }
 ::view-transition-new(root) {
@@ -88,5 +88,130 @@ body {
    to {
       transform: translateY(0);
       opacity: 1;
+   }
+} */
+
+/* Door animation */
+
+.door {
+   position: fixed;
+   top: 0;
+   width: 50%;
+   height: 100%;
+   z-index: 99;
+   pointer-events: none;
+}
+
+.door.left {
+   left: 0;
+   background: rgb(255, 255, 255);
+   transform: translateX(-130%);
+   z-index: 999;
+   overflow: visible;
+}
+
+.door.right {
+   right: 0;
+   background: rgb(255, 255, 255);
+   transform: translateX(130%);
+   overflow: visible;
+}
+
+/* Door animations remain the same */
+.door-close-left {
+   animation: close-left 1s forwards ease-in-out;
+}
+.door-close-right {
+   animation: close-right 1s forwards ease-in-out;
+}
+.door-open-left {
+   animation: open-left 1s forwards ease-in-out;
+}
+.door-open-right {
+   animation: open-right 1s forwards ease-in-out;
+}
+
+/* Keyframes remain the same */
+@keyframes close-left {
+   0% {
+      transform: translateX(-130%);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+@keyframes close-right {
+   0% {
+      transform: translateX(130%);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+@keyframes open-left {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(-130%);
+   }
+}
+@keyframes open-right {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(130%);
+   }
+}
+/* Default / Desktop (1024px and above) */
+.left-door-img {
+   position: absolute;
+   top: 30%;
+   left: 58%;
+   width: 60%;
+   height: auto;
+}
+
+.right-door-img {
+   position: absolute;
+   bottom: 15.5%;
+   right: 70%;
+   width: 30%;
+   height: auto;
+}
+
+/* Extra Large Desktop: 1441px – 1600px */
+@media (min-width: 1441px) and (max-width: 1600px) {
+   .left-door-img {
+      top: 20%;
+      left: 64%;
+      width: 52%;
+   }
+   .right-door-img {
+      bottom: 19%;
+      right: 73%;
+      width: 27%;
+   }
+}
+
+/* Large Desktop >1600px (optional, same as default) */
+@media (min-width: 1601px) {
+   .left-door-img {
+      top: 30%;
+      left: 65%;
+      width: 50%;
+   }
+   .right-door-img {
+      bottom: 18.3%;
+      right: 74%;
+      width: 26%;
+   }
+}
+
+/* Hide doors on smaller screens (<1024px) */
+@media (max-width: 1023px) {
+   .door {
+      display: none;
    }
 }

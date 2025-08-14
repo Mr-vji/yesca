@@ -44,28 +44,61 @@ export const Header = () => {
    const router = useRouter();
    const coverRef = useRef(null);
 
-   useEffect(() => {
-      if (!document.startViewTransition) return; // Fallback for browsers without support
+   // useEffect(() => {
+   //    if (!document.startViewTransition) return; // Fallback for browsers without support
 
-      // Override Next.js routing to use view transitions
-      const originalPush = router.push;
-      router.push = (href, options) => {
-         document.startViewTransition(() => {
-            originalPush(href, options);
-         });
-      };
-   }, [router]);
+   //    // Override Next.js routing to use view transitions
+   //    const originalPush = router.push;
+   //    router.push = (href, options) => {
+   //       document.startViewTransition(() => {
+   //          originalPush(href, options);
+   //       });
+   //    };
+   // }, [router]);
+
+   // const handleNavClick = (e, href) => {
+   //    e.preventDefault(); // stop immediate navigation
+   //    gsap.to(coverRef.current, {
+   //       yPercent: 0, // slide cover down
+   //       duration: 0,
+   //       ease: "power2.inOut",
+   //       onComplete: () => {
+   //          router.push(href);
+   //       },
+   //    });
+   // };
+
+   /* Day two */
 
    const handleNavClick = (e, href) => {
-      e.preventDefault(); // stop immediate navigation
-      gsap.to(coverRef.current, {
-         yPercent: 0, // slide cover down
-         duration: 0,
-         ease: "power2.inOut",
-         onComplete: () => {
-            router.push(href);
-         },
-      });
+      e.preventDefault();
+      const leftDoor = document.querySelector(".door.left");
+      const rightDoor = document.querySelector(".door.right");
+
+      // Step 1: Close doors
+      leftDoor.classList.add("door-close-left");
+      rightDoor.classList.add("door-close-right");
+
+      // Step 2: Wait 1s for close animation
+      setTimeout(() => {
+         // Navigate after doors are closed
+         router.push(href);
+
+         // Step 3: Wait 1s while doors stay closed, then open
+         setTimeout(() => {
+            leftDoor.classList.remove("door-close-left");
+            rightDoor.classList.remove("door-close-right");
+
+            leftDoor.classList.add("door-open-left");
+            rightDoor.classList.add("door-open-right");
+
+            // Step 4: Remove open classes after opening finishes
+            setTimeout(() => {
+               leftDoor.classList.remove("door-open-left");
+               rightDoor.classList.remove("door-open-right");
+            }, 1000); // duration of open animation
+         }, 400); // wait while closed
+      }, 1000); // duration of close animation
    };
 
    return (
