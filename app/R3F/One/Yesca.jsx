@@ -100,11 +100,11 @@ export default function Yesca() {
                   </mesh>
                   {/* Contact shadows for realistic object grounding */}
                   <ContactShadows
-                     position={[0, -1, 0]}
-                     scale={10}
-                     blur={0.5}
-                     far={1}
-                     opacity={0.28}
+                     position={[isMobile ? -0 : 0, isMobile ? -1.02 : -1, 0]}
+                     scale={isMobile ? 30 : 10}
+                     blur={isMobile ? 0 : 0.5}
+                     far={isMobile ? 1 : 1}
+                     opacity={isMobile ? 0.1 : 0.3}
                   />
                </group>
 
@@ -128,8 +128,8 @@ export default function Yesca() {
                {/* Initial position of this group is set to [0, initialVFXGroupY, 0] */}
                <group ref={vfxGroupRef} position={[0, 0, 0]}>
                   {/* Individual VFXParticle components, positioned relative to their parent group */}
-                  <VFXParticles position={[isMobile ? 0.15 : -1.38, isMobile ? 0.03 : 0.15, 0]} />
-                  <VFXParticles position={[isMobile ? -0.2 : -0.95, isMobile ? 0.03 : 0.15, 0]} />
+                  <VFXParticles position={[isMobile ? 0.15 : -1.38, isMobile ? 0.04 : 0.17, 0]} />
+                  <VFXParticles position={[isMobile ? -0.2 : -0.95, isMobile ? 0.04 : 0.17, 0]} />
                </group>
             </group>
          </>

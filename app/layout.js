@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
 
    return (
       <html lang="en">
-         <title>yesca</title>
+         <title>yesca.in</title>
          <link rel="icon" type="image/favicon" href="/images/YESCA.svg" />
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <Header />

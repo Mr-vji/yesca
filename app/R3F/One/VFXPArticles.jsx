@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { Color, DynamicDrawUsage, Euler, Matrix4, PlaneGeometry, Quaternion, Vector3 } from "three";
 
 import { randFloat, randFloatSpread } from "three/src/math/MathUtils.js";
+import { useMobile } from "../useMobile";
 
 const tmpPosition = new Vector3();
 const tmpRotationEuler = new Euler();
@@ -25,6 +26,7 @@ const PARTICLE_COLORS = [
 export const VFXParticles = ({ settings = {}, ...props }) => {
    const { nbParticles = 600 } = settings;
    const mesh = useRef();
+   const { isMobile } = useMobile();
 
    const defaultGeometry = useMemo(() => new PlaneGeometry(0.5, 0.5), []);
 
@@ -45,7 +47,11 @@ export const VFXParticles = ({ settings = {}, ...props }) => {
       const instanceSpeed = mesh.current.geometry.getAttribute("instanceSpeed");
       const instanceRotationSpeed = mesh.current.geometry.getAttribute("instanceRotationSpeed");
 
-      const position = [randFloatSpread(0.33), randFloatSpread(0.1), randFloatSpread(0.1)];
+      const position = [
+         randFloatSpread(isMobile ? 0.25 : 0.38),
+         randFloatSpread(0.1),
+         randFloatSpread(0.1),
+      ];
       const scale = [randFloatSpread(0.25), randFloatSpread(0.25), randFloatSpread(0.25)];
       const rotation = [
          randFloatSpread(Math.PI),
