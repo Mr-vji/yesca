@@ -1,4 +1,5 @@
 // components/Footer.jsx
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -15,6 +16,7 @@ export default function Footer() {
                />
 
                {/* Social & Phone */}
+
                <div className="text-xl md:text-3xl leading-tight">
                   {" "}
                   {/* ⬅️ bigger text */}
@@ -36,15 +38,40 @@ export default function Footer() {
             </div>
 
             {/* Right - Links */}
-            <div className="flex flex-col gap-1 text-lg md:text-2xl">
-               <p className="font-semibold text-2xl md:text-3xl">Links</p>
-               <ul className="list-disc list-inside space-y-2 leading-tight">
-                  <li className="hover:text-gray-300 cursor-pointer">Home</li>
-                  <li className="hover:text-gray-300 cursor-pointer">About us</li>
-                  <li className="hover:text-gray-300 cursor-pointer">Products</li>
-                  <li className="hover:text-gray-300 cursor-pointer">IT services</li>
-                  <li className="hover:text-gray-300 cursor-pointer">Dev services</li>
-                  <li className="hover:text-gray-300 cursor-pointer">Contact</li>
+            {/* Right - Links (move to top/left on mobile) */}
+            <div className="order-1 md:order-3 flex flex-col gap-1 text-lg md:text-2xl w-full md:w-auto">
+               <p className="font-semibold text-3xl md:text-3xl text-left">Links</p>
+               <ul className="list-disc text-2xl pt-2 list-inside space-y-2 leading-tight text-left">
+                  <li>
+                     <Link href="/" className="hover:text-blue-500 transition">
+                        Home
+                     </Link>
+                  </li>
+                  <li>
+                     <Link href="/About" className="hover:text-blue-500 transition">
+                        About us
+                     </Link>
+                  </li>
+                  <li>
+                     <Link href="/Products" className="hover:text-blue-500 transition">
+                        Products
+                     </Link>
+                  </li>
+                  <li>
+                     <Link href="/ItServices" className="hover:text-blue-500 transition">
+                        IT Services
+                     </Link>
+                  </li>
+                  <li>
+                     <Link href="/Devservices" className="hover:text-blue-500 transition">
+                        Dev Services
+                     </Link>
+                  </li>
+                  <li>
+                     <Link href="/Contact" className="hover:text-blue-500 transition">
+                        Contact
+                     </Link>
+                  </li>
                </ul>
             </div>
          </div>
