@@ -15,7 +15,7 @@ export default function HomeMain() {
    const mainRef = useRef(null);
 
    return (
-      <main ref={mainRef} className="relative w-full min-h-screen overflow-y-auto scroll-smooth">
+      <main ref={mainRef} className="relative w-full min-h-screen  overflow-hidden scroll-smooth">
          {/* Gradient Overlay */}
          <div className="fixed top-0 left-0 w-full h-full -z-10 transition-all duration-500" />
 
@@ -58,32 +58,16 @@ export default function HomeMain() {
          {/* Section 3 */}
          <section
             id="section4"
-            className="w-full h-screen text-white relative flex items-center justify-center"
-            style={{
-               background:
-                  " linear-gradient(180deg,rgba(252, 253, 255, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(255, 255, 255, 1) 100%)",
-            }}
+            className="w-full h-screen text-white relative flex items-center justify-center overflow-hidden"
          >
             <div className="absolute inset-0 flex items-center justify-center px-4 md:px-12 z-10">
                <HomeThirdSection />
             </div>
-            {/* <HomePage /> */}
-            {/* <SecondSection /> */}
          </section>
 
          {/* Section 4 */}
-         <section
-            id="section5"
-            className="w-full h-screen text-white relative flex items-center justify-center overflow-hidden"
-            style={{
-               background:
-                  " linear-gradient(180deg,rgba(252, 253, 255, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(255, 255, 255, 1) 100%)",
-               zIndex: -2,
-            }}
-         >
-            <div className="absolute inset-0 flex items-center justify-end px-4 md:px-12 z-10">
-               <HomeFourth />
-            </div>
+         <section id="section5" className="w-screen h-screen relative">
+            <HomeFourth />
          </section>
       </main>
    );

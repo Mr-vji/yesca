@@ -1,51 +1,70 @@
 import React from "react";
 import Image from "next/image";
+import { Roboto_Condensed, Poppins } from "next/font/google";
 import farmDosthLogo from "@/public/images/FD.png";
+
+// Roboto Condensed Black Italic
+const robotoCondensed = Roboto_Condensed({
+   subsets: ["latin"],
+   weight: "900",
+   style: "italic",
+   variable: "--font-roboto-condensed",
+});
+
+// Poppins Regular
+const poppins = Poppins({
+   subsets: ["latin"],
+   weight: "400",
+   variable: "--font-poppins",
+});
 
 export default function HomeSecondSection() {
    return (
-      <section className="w-full h-screen flex flex-col items-center justify-center px-4 md:px-12 text-black">
+      <section
+         className={`${robotoCondensed.variable} ${poppins.variable} w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 text-black`}
+      >
          {/* Top Title */}
-         <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold italic tracking-wide mb-12 uppercase text-center font-sans text-[#2d358e]">
+         <h2 className="text-3xl md:text-5xl lg:text-6xl font-b italic tracking-wide mb-14 uppercase text-center font-roboto-condensed text-gray-700">
             OUR PRODUCTS
          </h2>
 
          {/* Content Block */}
-         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-14">
+         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-12 md:gap-16">
             {/* Left: Logo */}
             <div className="w-full md:w-1/2 flex justify-center">
                <Image
                   src={farmDosthLogo}
                   alt="Farm Dosth Logo"
-                  className="w-auto h-auto max-w-[360px]"
+                  className="w-2/3 md:w-3/4 lg:w-2/3 h-auto"
+                  priority
                />
             </div>
 
             {/* Right: Text */}
-            <div className="w-full md:w-1/2 flex flex-col space-y-6 font-mono text-base md:text-lg leading-relaxed">
-               <p>
-                  🌾<span className="font-bold">COMING SOON</span>
+            <div className="w-full md:w-1/2 flex flex-col space-y-6 md:space-y-8 text-base md:text-xl lg:text-xl leading-relaxed text-left md:text-start">
+               <p className="font-roboto">
+                  🌾<span className="text-xl md:text-2xl">COMING SOON</span>
                </p>
 
-               <p>One platform. Every step. Every harvest.</p>
+               <p className="font-poppins">One platform. Every step. Every harvest.</p>
 
-               <p>
+               <p className="font-poppins">
                   From the first seed to the final sale — something game-changing is sprouting for
-                  farmers. <br />
+                  farmers.
+                  <br />
                   Tools, support, and smart solutions — all in one place.
                </p>
 
-               <p>🌱Stay tuned. The future of farming is almost here.</p>
+               <p className="font-poppins">🌱 Stay tuned. The future of farming is almost here.</p>
 
                {/* Buttons */}
-               <div className="w-full max-w-md p-1 bg-[#2942fa] rounded-xl flex items-center justify-between">
+               <div className="w-full max-w-lg pl-4 pr-0 py-2 bg-gray-100 rounded-xl flex items-center">
                   <input
                      type="text"
                      placeholder="subscribe to get notified."
-                     className="text-white text-sm font-mono px-4 py-2 bg-transparent focus:outline-none"
+                     className="text-gray-900 text-sm md:text-lg font-poppins px-4 py-2 bg-gray-100 focus:outline-none flex-grow"
                   />
-
-                  <button className="bg-[#2ecc40] hover:bg-[#28b737] text-white font-mono text-sm px-6 py-2 rounded-md transition">
+                  <button className="bg-[#3fba4f] mr-2 hover:bg-[#2e52c2] text-white font-roboto text-sm md:text-lg px-6 md:px-8 py-2 rounded-md transition">
                      KNOW MORE
                   </button>
                </div>

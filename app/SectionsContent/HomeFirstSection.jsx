@@ -25,6 +25,23 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
+import { Roboto_Condensed, Poppins } from "next/font/google";
+
+// Roboto Condensed Black Italic
+const robotoCondensed = Roboto_Condensed({
+   subsets: ["latin"],
+   weight: "900", // Black
+   style: "italic",
+   variable: "--font-roboto-condensed",
+});
+
+// Poppins Regular
+const poppins = Poppins({
+   subsets: ["latin"],
+   weight: "400", // Regular
+   variable: "--font-poppins",
+});
+
 export default function HomeFirstSection() {
    const textRef = useRef(null);
 
@@ -62,12 +79,13 @@ export default function HomeFirstSection() {
                <h1
                   ref={textRef}
                   className="
-                     text-5xl md:text-6xl lg:text-5xl xl:text-8xl
+text-6xl md:text-7xl lg:text-8xl xl:text-9xl
                      font-black italic leading-tight
+                     font-roboto-condensed
                   "
                   style={{ color: "#afd3f8" }}
                >
-                  {"WE MAKE TECH ".split("").map((char, index) => (
+                  {"WE MAKE TECH".split("").map((char, index) => (
                      <span key={index} style={{ display: "inline-block", whiteSpace: "pre" }}>
                         {char}
                      </span>

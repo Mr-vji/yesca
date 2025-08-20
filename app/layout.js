@@ -4,6 +4,21 @@ import "./globals.css";
 import { Header } from "./Components/Header";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Footer from "./Footer/Footer";
+import { Roboto_Condensed, Poppins } from "next/font/google";
+
+const robotoCondensed = Roboto_Condensed({
+   weight: "900", // Black
+   style: "italic",
+   subsets: ["latin"],
+   variable: "--font-roboto-condensed",
+});
+
+const poppins = Poppins({
+   weight: "400", // Regular
+   subsets: ["latin"],
+   variable: "--font-poppins",
+});
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -56,7 +71,6 @@ export default function RootLayout({ children }) {
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <Header />
             {/* Door panels */}
-
             <div ref={leftDoor} className="door left hidden md:flex">
                <img ref={Y} src="/LattersSvg/Y.svg" alt="Y" className="left-door-img" />
             </div>
@@ -65,6 +79,8 @@ export default function RootLayout({ children }) {
                <img ref={Dot} src="/LattersSvg/Dot.svg" alt="Dot" className="right-door-img" />
             </div>
             {children}
+
+            <Footer />
          </body>
       </html>
    );

@@ -5,6 +5,23 @@ import RevealAnimation from "../R3F/RevealAnimation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { Roboto_Condensed, Poppins } from "next/font/google";
+
+// Roboto Condensed Black Italic
+const robotoCondensed = Roboto_Condensed({
+   subsets: ["latin"],
+   weight: "900", // Black
+   style: "italic",
+   variable: "--font-roboto-condensed",
+});
+
+// Poppins Regular
+const poppins = Poppins({
+   subsets: ["latin"],
+   weight: "400", // Regular
+   variable: "--font-poppins",
+});
+
 export const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const menuRef = useRef(null);
@@ -102,7 +119,7 @@ export const Header = () => {
    };
 
    return (
-      <header className="w-full px-6 py-4 flex justify-between items-center bg-white/100 backdrop-blur-md shadow-lg fixed top-0 left-0 z-50">
+      <header className="w-full px-6 py-4 flex justify-between items-center text-white backdrop-blur-md shadow-lg fixed top-0 left-0 z-50">
          {/* Logo / Left */}
          <div className="flex items-center">
             <RevealAnimation />
@@ -111,7 +128,7 @@ export const Header = () => {
          {/* Hamburger Menu Button */}
          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 relative w-6 h-6"
+            className="md:hidden text-[#fff] relative w-6 h-6"
          >
             <svg
                className="w-full h-full absolute top-0 left-0"
@@ -173,7 +190,7 @@ export const Header = () => {
          </nav> */}
 
          {/* Page transition effect menus  */}
-         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
+         <nav className="hidden md:flex space-x-8 mr-16 text-[#fff] font-medium text-md font-poppins">
             <a href="/" onClick={(e) => handleNavClick(e, "/")}>
                Home
             </a>

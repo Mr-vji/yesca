@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* 
 :root {
    --background: #ffffff;
    --foreground: #171717;
@@ -19,6 +19,20 @@
       scrollbar-color: #2d358e #00000000;
       scrollbar-width: none;
    }
+} */
+
+/* globals.css */
+:root {
+   --font-roboto-condensed: "Roboto Condensed", sans-serif;
+   --font-poppins: "Poppins", sans-serif;
+}
+
+.font-roboto-condensed {
+   font-family: var(--font-roboto-condensed);
+}
+
+.font-poppins {
+   font-family: var(--font-poppins);
 }
 
 body {
