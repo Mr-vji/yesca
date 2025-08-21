@@ -119,7 +119,7 @@ export const Header = () => {
    };
 
    return (
-      <header className="w-full px-6 py-4 flex justify-between items-center text-white backdrop-blur-md shadow-lg fixed top-0 left-0 z-50">
+      <header className="w-full px-6 py-4 flex justify-between items-center text-white backdrop-blur-md  fixed top-0 left-0 z-50">
          {/* Logo / Left */}
          <div className="flex items-center">
             <RevealAnimation />
