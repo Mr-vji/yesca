@@ -41,9 +41,9 @@ export default function HomeSecondSection() {
             </div>
 
             {/* Right: Text */}
-            <div className="w-full md:w-1/2 flex flex-col space-y-6 md:space-y-8 text-base md:text-xl lg:text-xl leading-relaxed text-left md:text-start">
+            <div className="w-full md:w-1/2 flex flex-col space-y-6 md:space-y-8 text-sm md:text-base leading-relaxed text-left md:text-start">
                <p className="font-roboto">
-                  🌾<span className="text-xl md:text-2xl">COMING SOON</span>
+                  <span className="text-base md:text-lg">🌾 COMING SOON</span>
                </p>
 
                <p className="font-poppins">One platform. Every step. Every harvest.</p>
@@ -58,13 +58,13 @@ export default function HomeSecondSection() {
                <p className="font-poppins">🌱 Stay tuned. The future of farming is almost here.</p>
 
                {/* Buttons */}
-               <div className="w-full max-w-lg pl-4 pr-0 py-2 bg-gray-100 rounded-xl flex items-center">
+               <div className="w-full max-w-lg pl-4 pr-0 py-2 bg-gray-100 rounded-xl flex items-center mr-2">
                   <input
                      type="text"
                      placeholder="subscribe to get notified."
-                     className="text-gray-900 text-sm md:text-lg font-poppins px-4 py-2 bg-gray-100 focus:outline-none flex-grow"
+                     className="text-gray-900 text-xs md:text-sm font-poppins px-3 py-2 bg-gray-100 focus:outline-none flex-grow"
                   />
-                  <button className="bg-[#3fba4f] mr-2 hover:bg-[#2e52c2] text-white font-roboto text-sm md:text-lg px-6 md:px-8 py-2 rounded-md transition">
+                  <button className="bg-[#3fba4f] mr-2 hover:bg-[#2e52c2] text-white font-roboto text-xs md:text-sm px-5 md:px-6 py-2 rounded-md transition">
                      KNOW MORE
                   </button>
                </div>
