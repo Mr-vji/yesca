@@ -28,7 +28,7 @@ export const HomeFourth = () => {
                      className="max-w-full max-h-full object-contain blur-sm"
                   />
                </div>
-               <span className="mt-5 text-xl md:text-lg text-gray-600 font-bold text-center font-poppins">
+               <span className="mt-5 text-2xl md:text-3xl text-gray-600  text-center font-poppins whitespace-nowrap">
                   Community Product
                </span>
             </div>
@@ -42,8 +42,9 @@ export const HomeFourth = () => {
                      className="max-w-full max-h-full object-contain blur-sm"
                   />
                </div>
-               <span className="mt-5 text-xl md:text-lg text-gray-600 font-bold text-center font-poppins">
-                  Construction Industry Product
+               <span className="mt-5 text-2xl md:text-3xl text-gray-600 text-center font-poppins whitespace-nowrap">
+                  Construction Industry <br />
+                  Product
                </span>
             </div>
 
@@ -56,7 +57,7 @@ export const HomeFourth = () => {
                      className="max-w-full max-h-full object-contain blur-sm"
                   />
                </div>
-               <span className="mt-5 text-xl md:text-lg text-gray-600 font-bold text-center font-poppins">
+               <span className="mt-5 text-2xl md:text-3xl text-gray-600 text-center font-poppins">
                   More ...
                </span>
             </div>
