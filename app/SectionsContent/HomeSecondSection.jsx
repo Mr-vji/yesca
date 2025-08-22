@@ -58,7 +58,7 @@ export default function HomeSecondSection() {
                <p className="font-poppins">🌱 Stay tuned. The future of farming is almost here.</p>
 
                {/* Buttons */}
-               <div className="w-full max-w-lg p-0 md:pl-4 md:pr-0 md:py-2 bg-gray-100 rounded-xl flex items-center mr-2">
+               <div className="w-full max-w-lg pl-4 pr-0 py-1 md:py-2 bg-gray-100 rounded-xl flex items-center mr-2">
                   <input
                      type="text"
                      placeholder="subscribe to get notified."
