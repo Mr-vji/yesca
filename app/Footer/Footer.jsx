@@ -66,7 +66,7 @@ export default function Footer() {
             {/* Right - Links */}
             <div className="flex flex-col gap-1 md:gap-2 text-sm sm:text-base lg:text-lg w-full md:w-auto lg:w-auto">
                <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-1">Links</p>
-               <ul className="list-disc list-inside font-semibold leading-normal space-y-0">
+               <ul className="list-none list-inside font-semibold leading-normal space-y-0">
                   {[
                      { href: "/", label: "Home" },
                      { href: "/About", label: "About us" },

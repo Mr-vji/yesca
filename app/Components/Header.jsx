@@ -119,7 +119,7 @@ export const Header = () => {
    };
 
    return (
-      <header className="w-full px-6 py-4 flex justify-between items-center text-white backdrop-blur-md  fixed top-0 left-0 z-50">
+      <header className="w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center text-white backdrop-blur-md fixed top-0 left-0 z-50">
          {/* Logo / Left */}
          <div className="flex items-center">
             <RevealAnimation />
@@ -128,7 +128,7 @@ export const Header = () => {
          {/* Hamburger Menu Button */}
          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-[#fff] relative w-6 h-6"
+            className="lg:hidden text-[#fff] relative w-5 h-5 sm:w-6 sm:h-6"
          >
             <svg
                className="w-full h-full absolute top-0 left-0"
@@ -190,46 +190,46 @@ export const Header = () => {
          </nav> */}
 
          {/* Page transition effect menus  */}
-         <nav className="hidden md:flex space-x-8 mr-16 text-[#fff] font-medium text-md font-poppins">
+         <nav className="hidden lg:flex space-x-6 xl:space-x-8 mr-8 lg:mr-12 xl:mr-16 text-[#fff] font-medium text-sm lg:text-base font-poppins">
             <a
                href="/"
                onClick={(e) => handleNavClick(e, "/")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                Home
             </a>
             <a
                href="/Products"
                onClick={(e) => handleNavClick(e, "/Products")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                Products
             </a>
             <a
                href="/Services/ItServices"
                onClick={(e) => handleNavClick(e, "/Services/ItServices")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                IT Services
             </a>
             <a
                href="/Devservices"
                onClick={(e) => handleNavClick(e, "/Devservices")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                Dev Services
             </a>
             <a
                href="/About"
                onClick={(e) => handleNavClick(e, "/About")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                About
             </a>
             <a
                href="/Contact"
                onClick={(e) => handleNavClick(e, "/Contact")}
-               className="cursor-pointer active:scale-90 transition-transform duration-150"
+               className="cursor-pointer hover:text-blue-300 active:scale-90 transition-all duration-150"
             >
                Contact
             </a>
@@ -238,43 +238,49 @@ export const Header = () => {
          {/* Mobile Menu */}
          <div
             ref={menuRef}
-            className="md:hidden absolute top-19 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg overflow-hidden"
+            className="lg:hidden absolute top-16 sm:top-19 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg overflow-hidden"
             style={{ height: 0 }}
          >
-            <nav className="flex flex-col space-y-4 p-6 text-white font-medium text-sm md:hidden">
+            <nav className="flex flex-col space-y-3 sm:space-y-4 p-4 sm:p-6 text-white font-medium text-sm sm:text-base lg:hidden">
                <Link
                   href="/"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   Home
                </Link>
                <Link
                   href="/Products"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   Products
                </Link>
                <Link
                   href="/Services/ItServices"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   IT Services
                </Link>
                <Link
                   href="/Devservices"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   Dev Services
                </Link>
                <Link
                   href="/About"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   About
                </Link>
                <Link
                   href="/Contact"
-                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+                  className="block px-3 py-2 sm:px-4 sm:py-3 rounded cursor-pointer active:scale-95 transition-all duration-150 bg-transparent hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
                >
                   Contact
                </Link>
