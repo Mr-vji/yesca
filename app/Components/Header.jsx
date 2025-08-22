@@ -191,23 +191,46 @@ export const Header = () => {
 
          {/* Page transition effect menus  */}
          <nav className="hidden md:flex space-x-8 mr-16 text-[#fff] font-medium text-md font-poppins">
-            <a href="/" onClick={(e) => handleNavClick(e, "/")}>
+            <a
+               href="/"
+               onClick={(e) => handleNavClick(e, "/")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                Home
             </a>
-            <a href="/Products" onClick={(e) => handleNavClick(e, "/Products")}>
+            <a
+               href="/Products"
+               onClick={(e) => handleNavClick(e, "/Products")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                Products
             </a>
-            <a href="/ItServices" onClick={(e) => handleNavClick(e, "/ItServices")}>
+            <a
+               href="/Services/ItServices"
+               onClick={(e) => handleNavClick(e, "/Services/ItServices")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                IT Services
             </a>
-            <a href="/Devservices" onClick={(e) => handleNavClick(e, "/Devservices")}>
+            <a
+               href="/Devservices"
+               onClick={(e) => handleNavClick(e, "/Devservices")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                Dev Services
             </a>
-            <a href="/About" onClick={(e) => handleNavClick(e, "/About")}>
+            <a
+               href="/About"
+               onClick={(e) => handleNavClick(e, "/About")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                About
             </a>
-
-            <a href="/Contact" onClick={(e) => handleNavClick(e, "/Contact")}>
+            <a
+               href="/Contact"
+               onClick={(e) => handleNavClick(e, "/Contact")}
+               className="cursor-pointer active:scale-90 transition-transform duration-150"
+            >
                Contact
             </a>
          </nav>
@@ -218,23 +241,41 @@ export const Header = () => {
             className="md:hidden absolute top-19 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg overflow-hidden"
             style={{ height: 0 }}
          >
-            <nav className="flex flex-col space-y-4 p-6 text-white font-medium text-sm">
-               <Link href="/" className="hover:text-blue-500 transition">
+            <nav className="flex flex-col space-y-4 p-6 text-white font-medium text-sm md:hidden">
+               <Link
+                  href="/"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   Home
                </Link>
-               <Link href="/Products" className="hover:text-blue-500 transition">
+               <Link
+                  href="/Products"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   Products
                </Link>
-               <Link href="/ItServices" className="hover:text-blue-500 transition">
+               <Link
+                  href="/Services/ItServices"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   IT Services
                </Link>
-               <Link href="/Devservices" className="hover:text-blue-500 transition">
+               <Link
+                  href="/Devservices"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   Dev Services
                </Link>
-               <Link href="/About" className="hover:text-blue-500 transition">
+               <Link
+                  href="/About"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   About
                </Link>
-               <Link href="/Contact" className="hover:text-blue-500 transition">
+               <Link
+                  href="/Contact"
+                  className="block px-2 py-2 rounded cursor-pointer active:scale-90 transition-transform duration-150 bg-transparent hover:bg-white/10"
+               >
                   Contact
                </Link>
             </nav>

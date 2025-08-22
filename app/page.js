@@ -6,6 +6,7 @@ export default function Home() {
    return (
       <>
          <HomeMain />
+         {/* <h1 className="text-2xl text-red-500"> vijay </h1> */}
       </>
    );
 }

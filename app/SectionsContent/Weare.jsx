@@ -9,7 +9,7 @@ const robotoCondensed = Roboto_Condensed({
    variable: "--font-roboto-condensed",
 });
 
-// Poppins Regular
+// Poppins Regular   
 const poppins = Poppins({
    subsets: ["latin"],
    weight: "400",
@@ -21,7 +21,6 @@ export const Weare = () => {
       <section
          className={`${robotoCondensed.variable} ${poppins.variable} w-full h-screen flex justify-center items-center bg-transparent`}
       >
-         {/* Wrapper for content */}
          <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl px-4 md:px-12 w-full gap-10">
             {/* Left side: "We are" block */}
             <div className="w-full md:w-1/2 flex flex-col items-end justify-center space-y-2 text-right">

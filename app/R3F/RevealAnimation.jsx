@@ -26,17 +26,25 @@ export default function RevealAnimation() {
    useEffect(() => {
       gsap.set(Y.current, { x: 0 });
       gsap.set(Dot.current, { x: -178 });
-      gsap.set([E.current, S.current, C.current, A.current], { scale: 0, opacity: 0 });
+      gsap.set([E.current, S.current, C.current, A.current], {
+         scale: 0,
+         opacity: 0,
+         transformOrigin: "center center", // ✅ Fix jump issue
+      });
 
       tl.current = gsap.timeline({ paused: true });
 
-      tl.current
-         .to(Dot.current, { x: 0, duration: 0.9, ease: "power1.inOut" }, "<")
-         .to(
-            [E.current, S.current, C.current, A.current],
-            { scale: 1, opacity: 1, duration: 0.1, ease: "power1.inOut", stagger: 0.15 },
-            "-=0.7"
-         );
+      tl.current.to(Dot.current, { x: 0, duration: 0.9, ease: "power1.inOut" }, "<").to(
+         [E.current, S.current, C.current, A.current],
+         {
+            scale: 1,
+            opacity: 1,
+            duration: 0.2,
+            ease: "power2.out",
+            stagger: 0.15,
+         },
+         "-=0.7"
+      );
 
       tl.current.play();
 
@@ -78,42 +86,12 @@ export default function RevealAnimation() {
 
    return (
       <div className="reveal-animation bg-transparent flex items-center justify-start">
-         <img
-            ref={Y}
-            src={images.Y}
-            alt="Y"
-            className="w-10 h-auto mx-0.5 transition-opacity duration-500"
-         />
-         <img
-            ref={E}
-            src={images.E}
-            alt="E"
-            className="w-8 h-auto mx-0.5 transition-opacity duration-500"
-         />
-         <img
-            ref={S}
-            src={images.S}
-            alt="S"
-            className="w-9 h-auto mx-0.5 transition-opacity duration-500"
-         />
-         <img
-            ref={C}
-            src={images.C}
-            alt="C"
-            className="w-10 h-auto mx-0.5 transition-opacity duration-500"
-         />
-         <img
-            ref={A}
-            src={images.A}
-            alt="A"
-            className="w-10 h-auto mx-0.5 transition-opacity duration-500"
-         />
-         <img
-            ref={Dot}
-            src={images.Dot}
-            alt="Dot"
-            className="w-6 h-auto mx-0 mt-6 transition-opacity duration-500"
-         />
+         <img ref={Y} src={images.Y} alt="Y" className="w-10 h-auto mx-0.5" />
+         <img ref={E} src={images.E} alt="E" className="w-8 h-auto mx-0.5" />
+         <img ref={S} src={images.S} alt="S" className="w-9 h-auto mx-0.5" />
+         <img ref={C} src={images.C} alt="C" className="w-10 h-auto mx-0.5" />
+         <img ref={A} src={images.A} alt="A" className="w-10 h-auto mx-0.5" />
+         <img ref={Dot} src={images.Dot} alt="Dot" className="w-6 h-auto mx-0 mt-6" />
       </div>
    );
 }
