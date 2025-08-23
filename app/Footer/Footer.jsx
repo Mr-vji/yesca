@@ -21,7 +21,7 @@ export default function Footer() {
                   className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 h-auto"
                />
                <div className="flex flex-col gap-2 md:gap-3 max-w-full md:max-w-lg lg:max-w-xl leading-relaxed">
-                  <p className="font-semibold flex items-center gap-2 text-base md:text-lg">
+                  <p className="font-bold flex items-center gap-2 text-base md:text-lg">
                      YESCA TECHNOLOGIES PVT LTD
                   </p>
                   <p className="leading-relaxed md:leading-loose text-sm md:text-base">
@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="flex flex-col gap-1 md:gap-2 text-sm sm:text-base lg:text-lg w-full md:w-auto lg:w-auto lg:items-center">
                <p className="font-normal italic text-base mr-10 md:text-lg mb-1">Links</p>{" "}
                {/* Applied normal font weight with italic */}
-               <ul className="list-none list-inside font-semibold leading-normal space-y-0 text-sm md:text-base">
+               <ul className="list-none list-inside font-bold leading-normal space-y-0 text-sm md:text-base">
                   {[
                      { href: "/", label: "Home" },
                      { href: "/About", label: "About us" },
@@ -62,7 +62,7 @@ export default function Footer() {
                   {/* Applied normal font weight with italic */}
                   IT Services
                </p>
-               <ul className="list-none list-inside font-semibold leading-normal space-y-0 text-sm md:text-base">
+               <ul className="list-none list-inside font-bold leading-normal space-y-0 text-sm md:text-base">
                   {[
                      { href: "#", label: "Security Service's" },
                      { href: "#", label: "Networking" },
@@ -89,7 +89,7 @@ export default function Footer() {
                   {/* Applied normal font weight with italic */}
                   Dev Services
                </p>
-               <ul className="list-none list-inside font-semibold leading-normal space-y-0 text-sm md:text-base">
+               <ul className="list-none list-inside font-bold leading-normal space-y-0 text-sm md:text-base">
                   {[
                      { href: "#", label: "Web DEV" },
                      { href: "#", label: "App Dev" },
