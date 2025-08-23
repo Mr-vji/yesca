@@ -24,7 +24,7 @@ export default function HomeThirdSection() {
          className={`${robotoCondensed.variable} ${poppins.variable} w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-black`}
       >
          {/* Content Block */}
-         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-10 md:gap-14">
+         <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl gap-10 md:gap-14">
             {/* Left: Text */}
             <div className="w-full md:w-1/2 flex flex-col space-y-4 md:space-y-6 text-sm md:text-base leading-relaxed text-left md:text-end">
                <p className="font-roboto">

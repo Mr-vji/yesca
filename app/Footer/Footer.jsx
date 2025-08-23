@@ -33,14 +33,14 @@ export default function Footer() {
 
             {/* Links */}
             <div className="flex flex-col gap-1 md:gap-2 text-sm sm:text-base lg:text-lg w-full md:w-auto lg:w-auto lg:items-center">
-               <p className="font-normal italic text-base mr-10 md:text-lg mb-1">Links</p>{" "}
+               <p className="font-normal italic text-base mr-10 md:text-lg mb-1">Links</p>
                {/* Applied normal font weight with italic */}
                <ul className="list-none list-inside font-bold leading-normal space-y-0 text-sm md:text-base">
                   {[
                      { href: "/", label: "Home" },
                      { href: "/About", label: "About us" },
                      { href: "/Products", label: "Products" },
-                     { href: "/ItServices", label: "IT services" },
+                     { href: "", label: "IT services" },
                      { href: "/Devservices", label: "Dev services" },
                      { href: "/Contact", label: "Contact" },
                   ].map((link) => (

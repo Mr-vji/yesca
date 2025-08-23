@@ -15,7 +15,7 @@ export default function HomePage() {
       <>
          {/* Fixed full-screen Canvas */}
          <div className="relative top-0 left-0 w-full h-full bg-transparent z-20 ">
-            <Canvas shadows camera={{ position: [3, 3, 19], fov: 10 }}>
+            <Canvas shadows camera={{ position: [3, 1.5, 19], fov: 10 }}>
                <Suspense fallback={null}>
                   {isMobile ? "null" : <MouseMove />}
                   <Yesca />
