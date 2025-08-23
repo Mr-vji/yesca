@@ -19,6 +19,10 @@ export default function HomePage() {
                <Suspense fallback={null}>
                   {isMobile ? "null" : <MouseMove />}
                   <Yesca />
+                  <mesh>
+                     <boxGeometry args={[1, 1, 1]} />
+                     <meshNormalMaterial />
+                  </mesh>
                </Suspense>
             </Canvas>
          </div>
