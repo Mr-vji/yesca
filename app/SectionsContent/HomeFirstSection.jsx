@@ -54,7 +54,7 @@ export default function HomeFirstSection() {
             opacity: 1,
             y: 0,
             duration: 0.6,
-            stagger: 0.04, // 0.002s between letters
+            stagger: 0.04,
             ease: "power3.out",
          }
       );
